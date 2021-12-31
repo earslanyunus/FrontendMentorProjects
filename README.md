@@ -9,3 +9,5 @@ Projects Previews:
 [Nft Card](https://earslanyunus-nftcard.netlify.app/) 
 
 [Order Summary Card](https://earslanyunus-ordercard.netlify.app/)
+
+[Stats Preview Card](https://earslanyunus-statspreviewcard.netlify.app/)
