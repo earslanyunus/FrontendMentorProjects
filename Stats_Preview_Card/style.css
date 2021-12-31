@@ -1,0 +1,162 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.soft-violet {
+  color: hsl(277, 64%, 61%);
+}
+.lexendDeca {
+  font-family: "Lexend Deca", "sans-serif";
+  font-weight: 400;
+}
+p,
+a {
+  font-size: 15px;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: hsl(233, 47%, 7%);
+  font-family: "sans-serif", "Inter";
+}
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+}
+
+.card {
+  max-width: 120rem;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  align-items: center;
+  -ms-grid-columns: 1fr 1fr;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+}
+.img-box {
+  height: 100%;
+  background-color: rgb(170, 92, 219);
+  background-image: url("stats-preview-card-component-main/images/image-header-desktop.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.text-box {
+  padding: 7rem 9rem 7rem 7rem;
+}
+.title {
+  font-size: 4rem;
+  color: white;
+}
+.text-desc {
+  margin-top: 3rem;
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.8;
+  font-size: 1.6rem;
+}
+.stat-box {
+  margin-top: 8rem;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr 1fr 1fr;
+}
+.stats-num {
+  font-weight: 700;
+  color: white;
+  font-size: 2.5rem;
+}
+.stats-text {
+  font-size: 1.4rem;
+  color: hsla(0, 0%, 100%, 0.6);
+  margin-top: 0.2rem;
+}
+.footer,
+.footer a {
+  font-size: 1.3rem;
+  color: white;
+}
+.footer a:link,
+.footer a:visited {
+  color: white;
+}
+.footer a:hover,
+.footer a:active {
+  color: hsl(277, 64%, 61%);
+  text-decoration: none;
+}
+.footer-box {
+  margin-top: 3rem;
+}
+@media all and (max-width: 59.6em) {
+  .text-box {
+    padding: 4rem 5rem 4rem 4rem;
+  }
+}
+@media all and (max-width: 50.7em) {
+  html {
+    font-size: 50%;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    -ms-grid-rows: 1fr 2fr;
+    -ms-grid-columns: 1fr;
+  }
+
+  .img-box {
+    grid-row-start: 1;
+  }
+  .text-box {
+    padding: 3rem 5rem 3rem 3rem;
+  }
+  .stat-box {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 2rem;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr;
+  }
+
+  p {
+    text-align: center;
+  }
+  h1 {
+    text-align: center;
+  }
+}

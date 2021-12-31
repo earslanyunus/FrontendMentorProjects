@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.text-align-center{
+    text-align: center;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'serif','Red Hat Display';
+    background-color: hsl(225, 100%, 94%);
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-image: url(order-summary-component-main/images/pattern-background-desktop.svg);
+
+}
+p,a{
+    font-size: 1.6rem;
+}
+.main-bg{
+   display: flex;
+   flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 12rem 2rem 2rem 2rem;
+    
+
+    
+}
+.card{
+    max-width: 45rem;
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: 0rem 2rem 0.8rem hsla(245, 75%, 52%, 0.096);
+    overflow: hidden;
+}
+.card-img{
+    width: 100%;
+
+}
+.card-text-box{
+    padding: 5rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2.5rem;
+}
+.card-head-text{
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: hsl(223, 47%, 23%);
+}
+.card-desc{
+    color: hsl(224, 23%, 55%);
+}
+.music-container{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 3px;
+    width: 100%;
+    align-items: center;
+}
+.music-desc-box{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 1rem;
+}
+.plan{
+    font-weight: 700;
+    color: hsl(223, 47%, 23%);
+}
+.price {
+    color: hsl(224, 23%, 55%);
+}
+.music-desc{
+    display: flex;
+    flex-direction: column;
+}
+.link:link,
+.link:visited{
+    justify-self: flex-end;
+    color: hsl(245, 75%, 52%);
+    font-weight: 700;
+    transition: all 0.2s;
+}
+.link:hover,
+.link:active{
+    text-decoration: none;
+    color: #766CF3;
+    
+}
+.btn{
+    text-decoration: none;
+    font-weight: 900;
+    display: block;
+
+
+
+}
+.primary-button:link,
+.primary-button:visited{
+    transition: all 0.2s;
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-radius: 10px;
+    box-shadow: 0rem 1rem 0.8rem hsla(245, 75%, 52%, 0.041);
+
+
+    
+}
+.primary-button:hover,
+.primary-button:active{
+    background-color: #766CF3;    
+
+
+}
+.secondary-button:link,
+.secondary-button:visited{
+    color: hsl(224, 23%, 55%);
+    transition: all 0.2s;
+
+}
+
+.secondary-button:hover,
+.secondary-button:active{
+    color: hsl(223, 47%, 23%);
+}
+.footer, .footer a{
+    font-size: 1.3rem;
+    
+}
+.footer a:link,
+.footer a:visited{
+    color: hsl(245, 75%, 52%);
+}
+.footer a:hover,
+.footer a:active{
+    color: #766CF3;
+    text-decoration: none;
+}
+.footer-box{
+    margin-top: 3rem;
+}
+@media all and (max-width:28.5em){
+    html{
+        font-size: 50%;
+    }
+    .card-text-box{
+        padding: 3rem;
+        
+    }
+}

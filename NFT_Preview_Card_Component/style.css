@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Outfit','sans-serif'
+}
+p , a{
+    font-size: 1.8rem;
+}
+.w-100{
+    width: 100%;
+}
+.main-bg{ 
+    background-color:hsl(217, 54%, 11%) ;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    flex-direction: column;
+    gap: 3rem;
+}
+.card-body{
+    background-color: hsl(216, 50%, 16%);
+    max-width: 35rem;
+    margin: 0 auto;
+    padding: 2rem 2rem ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#coin-img{
+    width: 100%;
+    border-radius: inherit;
+}
+#card-head:link,
+#card-head:visited{
+    color: white;
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-decoration: none;
+}
+#card-head:hover,
+#card-head:active{
+    color: hsl(178, 100%, 50%);
+}
+.paragraph{
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+    
+    
+}
+#price-box{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+    padding-bottom: 2rem;
+}
+#price{
+    color: hsl(178, 100%, 50%);
+    vertical-align: sub;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    
+}
+#left-time{
+    color: hsl(215, 51%, 70%);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+#author{
+    border-radius: 50%;
+    height: 4rem;
+    border: 1px solid white;
+}
+#author-box{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.paragraph{
+    color: hsl(215, 51%, 70%);
+
+}
+.paragraph a:link,
+.paragraph a:visited{
+    color: white;
+    text-decoration: none;
+}
+.paragraph a:hover,
+.paragraph a:active{
+    color: hsl(178, 100%, 50%);
+}
+.footer,.footer a:link,.footer a:visited{
+    color: white;
+    font-size: 1.1rem;
+}
+.footer a:hover,
+.footer a:active{
+    color: hsl(178, 100%, 50%);
+}
+
+@media all and (max-width:22.3em) {
+    html{
+        font-size: 50%;
+    }
+}
