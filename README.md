@@ -13,3 +13,5 @@ Projects Previews:
 [Stats Preview Card](https://earslanyunus-statspreviewcard.netlify.app/)
 
 [3 Columns Card](https://earslanyunus-3columnscard.netlify.app/)
+
+[Profile Card](https://earslanyunus-profilecard.netlify.app/)
