@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Preview</title>
     <link rel="shortcut icon" href="article-preview-component-master/images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
 </head>
 <body>
     <main>
@@ -24,30 +26,41 @@
                         to help you make any room feel complete.
                     </p>
                     <div class="text-box-profile-container">
-                            <div class="user-box">
-                                <div class="profile-picture">
-                                    <img src="article-preview-component-master/images/avatar-michelle.jpg" alt="">
-                                </div>
-                                <div class="profile-stats">
-                                    <p class="name">Michelle Appleton</p>
-                                    <p class="date">28 JUN 2020</p>
+                            <div class="user-box-container">
+                                <div class="user-box">
+                                    <div class="profile-picture">
+                                        <img src="article-preview-component-master/images/avatar-michelle.jpg" alt="">
+                                    </div>
+                                    <div class="profile-stats">
+                                        <p class="name">Michelle Appleton</p>
+                                        <p class="date">28 JUN 2020</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="buton">
-                                <div class="share-box">
-                                    <p class="">SHARE</p>
-                                    <img src="article-preview-component-master/images/icon-facebook.svg" alt="">
-                                    <img src="article-preview-component-master/images/icon-twitter.svg" alt="">
-                                    <img src="article-preview-component-master/images/icon-pinterest.svg" alt="">
 
+                                <div class="btn-container evn">
+                                    <a href="#" class="share-btn evn">
+                                        <img class="arrow evn" src="article-preview-component-master/images/icon-share.svg" alt="">
+                                    </a>
                                 </div>
-
-                                <a href="#" class="share-btn"><img src="article-preview-component-master/images/icon-share.svg" alt=""></a>
                             </div>
                         </div>
                     </div>
+                    <div class="share-box evn hidden">
+                        <p class="evn" class="">SHARE</p>
+                        <img class="evn" src="article-preview-component-master/images/icon-facebook.svg" alt="">
+                        <img class="evn" src="article-preview-component-master/images/icon-twitter.svg" alt="">
+                        <img class="evn" src="article-preview-component-master/images/icon-pinterest.svg" alt="">
+
+                    </div>
             </div>
         </div>
+        <div class="footer-box">
+            <p class="footer text-align-center">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></p>
+            <p class="footer  text-align-center">Coded by <a href="https://github.com/earslanyunus" target="_blank">Yunus Emre Arslan</a></p>
+        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

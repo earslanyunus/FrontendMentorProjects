@@ -1,0 +1,48 @@
+@media all and (max-width : 56.75em) {
+    .card{
+        max-width: 37rem;
+    }
+    .share-box{
+        bottom: 26%;
+        right: -10%;
+    }
+}
+@media all and (max-width: 44.75em) {
+    main{
+        padding: 3rem;
+    }
+    .card{
+        grid-template-columns: 1fr;
+        grid-template-rows:1.2fr 2fr ;
+        max-width: 24rem;
+    }
+    .share-box{
+        right: initial;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0 0 6px 6px;
+        padding: 1.8rem 2rem;
+
+
+    }
+
+    .share-box::after{
+        display: none;
+    }
+    .buton{
+        z-index: 1;
+    }
+    .text-box-profile-container{
+        align-items: flex-end;
+    }
+}
+@media all and (max-width: 26.125em) {
+
+    .card{
+        max-width: 18rem;
+    }
+}
+
+{
+
+}

@@ -21,6 +21,12 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.card-container{
+    position: relative;
+
+
 }
 .card{
 
@@ -32,6 +38,7 @@ main{
     background-color: white;
 }
 .text-box{
+    position: relative;
     padding: 2rem;
     overflow: hidden;
 }
@@ -94,24 +101,61 @@ main{
 
 }
 .share-box{
+    right: -8%;
     position: absolute;
-    top: 0rem;
-    left: -100%;
+    bottom: 30%;
     display: flex;
     align-items: center;
     gap: 1rem;
     background-color: hsl(217, 19%, 35%);
     padding: 0.8rem 2rem;
     border-radius: 1rem;
+
+
+
+}
+.share-box::after{
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px  solid hsl(217, 19%, 35%);
+
+
+
 }
 .share-box p{
     letter-spacing: 4px;
     font-size: 0.8rem;
     color: hsl(212, 23%, 69%);
 }
-.buton{
-    position: relative;
+.footer-box{
+    margin-top: 1rem;
 }
+.footer, .footer a{
+    font-size: 0.7rem;
+
+}
+.footer a:link,
+.footer a:visited{
+    color: hsl(214, 17%, 51%);
+}
+.footer a:hover,
+.footer a:active{
+    color: hsl(217, 19%, 35%);
+    text-decoration: none;
+}
+
+.hidden{
+    display: none;
+
+}
+
+
 
 
 
