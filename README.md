@@ -15,3 +15,5 @@ Projects Previews:
 [3 Columns Card](https://earslanyunus-3columnscard.netlify.app/)
 
 [Profile Card](https://earslanyunus-profilecard.netlify.app/)
+
+[Article Card](https://earslanyunus-articlecard.netlify.app/)
