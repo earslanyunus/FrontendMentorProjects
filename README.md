@@ -2,9 +2,8 @@
 
 Challenges by [Frontend Mentor](https://www.frontendmentor.io)
 
-Coded by Me 😀
-
-Projects Previews:
+---
+Projects Live Previews:
 
 [Nft Card](https://earslanyunus-nftcard.netlify.app/) 
 
@@ -17,3 +16,5 @@ Projects Previews:
 [Profile Card](https://earslanyunus-profilecard.netlify.app/)
 
 [Article Card](https://earslanyunus-articlecard.netlify.app/)
+
+[Faq Accordion](https://earslanyunus-faqaccordion.netlify.app/)
