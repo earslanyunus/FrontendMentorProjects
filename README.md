@@ -18,3 +18,5 @@ Projects Live Previews:
 [Article Card](https://earslanyunus-articlecard.netlify.app/)
 
 [Faq Accordion](https://earslanyunus-faqaccordion.netlify.app/)
+
+[Base Aperal](https://earslanyunus-baseaperal.netlify.app)
