@@ -3,16 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
-    
+    <title>Faq Accordion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="faq-accordion-card-main/images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
     <main>
-        <h1>Project Files</h1>
-    </main>
+        <div class="container">
+            <div class="card-container">
+                <img class="box-img" src="faq-accordion-card-main/images/illustration-box-desktop.svg" alt="">
 
-<script src="script.js"></script>
+                    <div class="card">
+                    <div class="side left">
+                        <div class="overflow-box">
+                            <img class="w-100 woman-img" src="faq-accordion-card-main/images/illustration-woman-online-desktop.svg" alt="">
+                            <img class=" bg-img" src="faq-accordion-card-main/images/bg-pattern-desktop.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <p class="text-head">FAQ</p>
+                        <div class="question-box">
+                            <div class="question ">
+                                <div class="question-head">
+                                    <p class="question-head-text">How many team members can I invite?</p>
+                                    <i class="fa-solid fa-chevron-down"></i>                           </div>
+                                <div class="question-desc">
+                                    <p class="question-desc-text">You can invite up to 2 additional users on the Free plan. There is no limit on
+                                        team members for the Premium plan.</p>
+                                </div>
+                            </div>
+                            <div class="question ">
+                                <div class="question-head">
+                                    <p class="question-head-text">What is the maximum file upload size?</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="question-desc">
+                                    <p class="question-desc-text">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                                </div>
+                            </div>
+                            <div class="question ">
+                                <div class="question-head">
+                                    <p class="question-head-text">How do I reset my password?</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="question-desc">
+                                    <p class="question-desc-text">Click “Forgot password” from the login page or “Change password” from your profile page.
+                                        A reset link will be emailed to you.</p>
+                                </div>
+                            </div>
+                            <div class="question ">
+                                <div class="question-head">
+                                    <p class="question-head-text">Can I cancel my subscription?</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="question-desc">
+                                    <p class="question-desc-text">Yes! Send us a message and we’ll process your request no questions asked.</p>
+                                </div>
+                            </div>
+                            <div class="question ">
+                                <div class="question-head">
+                                    <p class="question-head-text">Do you provide additional support?</p>
+                                    <i class="fa-solid fa-chevron-down"></i>                           </div>
+                                <div class="question-desc">
+                                    <p class="question-desc-text">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-box">
+            <p class="footer text-align-center">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></p>
+            <p class="footer  text-align-center">Coded by <a href="https://github.com/earslanyunus" target="_blank">Yunus Emre Arslan</a></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
