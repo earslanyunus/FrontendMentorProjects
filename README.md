@@ -19,4 +19,4 @@ Projects Live Previews:
 
 [Faq Accordion](https://earslanyunus-faqaccordion.netlify.app/)
 
-[Base Aperal](https://earslanyunus-baseaperal.netlify.app)
+[Base Apparel](https://earslanyunus-baseaperal.netlify.app)
