@@ -1,19 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root{
+    --primary-light-cyan:hsl(193,38%,86%);
+    --primary-neon-green:hsl(150,100%,66%);
+
+    --neutral-grayish-blue:hsl(215,36%,29%);
+    --neutral-dark-grayish-blue:hsl(219,39%,20%);
+}
+
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;
+}
 
 body{
-    font-family: "Source Sans Pro",'sans-serif';
+    font-family: 'Manrope',sans-serif;
     height: 100vh;
+    background-color: var(--neutral-dark-grayish-blue);
 
 }
 main{
     height: 100%;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    border-radius: 6px;
+    background-color: var(--neutral-grayish-blue);
+    width: 35rem;
+    position: relative;
+}
+.advice-title{
+    text-transform: uppercase;
+    color: var(--primary-neon-green);
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    margin: 15px 0;
+
+}
+.advice-text{
+    width: 100%%;
+    text-align: center;
+    color: var(--primary-light-cyan);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+.divider{
+    width: 100%;
+    margin: 15px 0 30px 0;
+}
+.btn{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%,50%);
+    border-radius: 50%;
+    background-color: var(--primary-neon-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+}
+.btn img{
+    width: 16px;
+    height: 16px;
+}
+.btn:hover{
+    box-shadow: 0px 0px 25px 0px var(--primary-neon-green);
+}
+.footer-box{
+    margin-top: 4rem;
+}
+
+.footer,.footer a:link,.footer a:visited{
+    color: var(--primary-light-cyan);
+    font-size: 1.2rem;
+}
+.footer a:hover,
+.footer a:active{
+    color: var(--primary-neon-green);
+}
+@media all and (max-width: 24em) {
+    html{
+        font-size: 60%;
+    }
 }
