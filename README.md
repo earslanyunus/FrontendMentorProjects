@@ -20,3 +20,5 @@ Projects Live Previews:
 [Faq Accordion](https://earslanyunus-faqaccordion.netlify.app/)
 
 [Base Apparel](https://earslanyunus-baseaperal.netlify.app)
+
+[Advice Generator](https://earslanyunus-advicegenerator.netlify.app)
