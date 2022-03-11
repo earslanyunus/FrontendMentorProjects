@@ -210,6 +210,19 @@ filter.addEventListener('change', evt => {
     x = []
 })
 
+const searchCountry = (ulke,filtername) =>{
+    console.log(ulke)
+    console.log(filtername)
+    const name = ulke.filtername
+    data.forEach(elm =>{
+        if (elm.indexOf(name)){
+            console.log(elm)
+        }
+    })
+
+}
+
+
 const updateDetailsUi = (ulke) =>{
     detailHeadText.textContent = ulke.name.common
     detailImg.setAttribute('src',`${ulke.flags.svg}`)
@@ -262,10 +275,8 @@ data.forEach(elm =>{
 country_area.addEventListener('click', evt => {
    if (evt.target.closest('.box')){
        const selectedCountry =  evt.target.closest('.box').lastChild.firstElementChild.textContent
-
        findCountry(selectedCountry)
        console.log(selectedCountry)
-
    }
 
 })
