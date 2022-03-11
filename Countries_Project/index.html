@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main class=" main-grid">
+        <nav class="navbar-container">
+            <section class="navbar container">
+                <p class="navbar-head">Where in the world?</p>
+                <button class="mode-toggle"><i class="fa-solid fa-moon"></i> Dark Mode</button>
+            </section>
+        </nav>
+        <section class="main-content">
+            <section id="detailsContainer" class="container none">
+                <div id="backbuttonContainer">
+                    <button class="primaryBtn" id="backButton"><i class="fa-solid fa-arrow-left-long"></i>Back</button>
+                </div>
+                <div id="countryInfo">
+
+                    <div id="detailImageContainer" class="">
+                        <img src="" id="detailImage" alt="">
+                    </div>
+
+                    <div id="detailTextContainer" class="text">
+                        <div id="detailTextHeaderCon">
+                            <p id="detailHeadText" ></p>
+                        </div>
+                        <div id="detailTextDescCon" >
+                            <div id="detailLeftTextArea">
+                                <p  class="fw600">Native Name: <span class="fw300" id="detailNativeName"> </span></p>
+                                <p class="fw600">Population: <span class="fw300" id="detailPopulation" > </span></p>
+                                <p class="fw600">Region: <span class="fw300" id="detailRegion"> </span></p>
+                                <p class="fw600">Sub Region: <span class="fw300" id="detailSubRegion"> </span></p>
+                                <p class="fw600">Capital: <span class="fw300" id="detailCapital"> </span></p>
+                            </div>
+                            <div id="detailRightTextArea">
+                                <p class="fw600">Top Level Domain: <span class="fw300" id="detailDomain" > </span></p>
+                                <p class="fw600">Currencies: <span class="fw300" id="detailCurrencies" > </span></p>
+                                <p class="fw600">Languages: <span class="fw300" id="detailLanguages" > </span></p>
+
+                            </div>
+                        </div>
+                        <div id="detailTextBorderCon">
+                            <p id="detailBorderText" class="fw600">Border Countries: </p>
+                            <div id="detailBorders">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="container" id="main-area">
+                <article class="filter-area">
+                    <div class="input-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input placeholder="Search for a country..." type="text" name="search" id="search">
+                    </div>
+                    <select class="region-select" name="region" id="">
+                        <option value="" selected disabled>Filter by Region</option>
+                        <option value="">All</option>
+                        <option value="">Africa</option>
+                        <option value="">Americas</option>
+                        <option value="">Asia</option>
+                        <option value="">Europe</option>
+                        <option value="">Oceania</option>
+                     </select>
+            </article>
+                <article class="country-area">
+                    <!--<div class="box">
+                        <img src="https://flagcdn.com/pe.svg" alt="">
+                        <div class="box-text-box">
+                            <p class="fw600 country-name">Peru</p>
+                            <p class="fw600 population-text">Population: <span class="fw300 population">Peru</span></p>
+                            <p class="fw600 region-text">Region: <span class="fw300 region">Europe</span></p>
+                            <p class="fw600 capital-text">Capital: <span class="fw300 capital">Berlin</span></p>
+                        </div>
+                    </div>-->
+                </article>
+                <div class="btn-div"><button class="primaryBtn load">Load</button></div>
+            </section>
+        </section>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>

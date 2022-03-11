@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root[color-mode="light"]{
+    --element:hsl(0,0%,100%);
+    --background:hsl(0,0%,98%);
+    --text:hsl(200,15%,8%)
+
+
+
+}
+:root[color-mode="dark"]{
+    --element:hsl(209,23%,22%);
+    --background:hsl(207,26%,17%);
+    --text:hsl(0,0%,100%)
+
+
+}
+
+/*RESET CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Nunito Sans",sans-serif;
+    height: 100vh;
+    background-color: var(--background);
+
+
+}
+main{
+    background-color: var(--background);
+    padding-bottom: 2rem;
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+/*DETAIL PAGE*/
+#detailsContainer{
+    display: flex;
+    flex-direction: column;
+}
+.fa-arrow-left-long{
+    margin-right: 1rem;
+}
+#countryInfo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 15rem;
+    margin-top: 5rem;
+}
+#detailTextDescCon{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#detailTextBorderCon{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+#detailBorderText{
+    margin-right: 1rem;
+}
+#detailImage{
+    width: 100%;
+}
+#detailHeadText{
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+#detailLeftTextArea p,#detailRightTextArea p{
+    margin-top: 1rem;
+}
+#detailBorders{
+
+    font-size: 1.4rem;
+}
+/*HEADER SECTION*/
+.container{
+    margin: 0 10rem;
+
+}
+.main-grid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+}
+
+.navbar-container{
+
+    background-color: var(--element);
+    padding: 2rem 0;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.1);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-head{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.mode-toggle{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+
+}
+.main-content{
+    padding-top: 4rem;
+}
+.filter-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-box{
+    position: relative;
+}
+.fa-magnifying-glass{
+    position: absolute;
+    left: 5%;
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text)
+
+}
+#search{
+    background-color: var(--element);
+    color: var(--text);
+    border: none;
+    box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.1);
+    width: 35rem;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    border-radius: 5px;
+
+}
+#search:focus{
+
+    outline: none;
+    border: 1px solid var(--text);
+}
+.region-select{
+    border: none;
+    padding: 1.5rem;
+    background-color: var(--element);
+    color: var(--text);
+    box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.1);
+    border-radius: 5px;
+
+
+
+
+}
+.country-area{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: stretch;
+    gap: 4rem;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 30rem;
+    background-color: var(--element);
+    box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.1);
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+.box-text-box{
+    padding: 2rem;
+    font-size: 1.4rem;
+    color: var(--text);
+}
+.img-container{
+    height:25rem ;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.flag-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.country-name{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.homepageItems{
+    font-size: 1.4rem;
+}
+.detailpageItems{
+    font-size: 1.6rem;
+}
+.fw600{
+    font-weight: 600;
+}
+.fw300{
+    font-weight: 300;
+}
+.primaryBtn{
+
+    background-color: var(--element);
+    color: var(--text);
+    border: none;
+    box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.1);
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 5px;
+    transition: box-shadow .2s ease;
+
+}
+.primaryBtn:hover{
+    box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.2);
+
+}
+.btn-div{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    color: var(--text);
+}
+.w-100{
+    width: 100%;
+}
+.ml1{
+    margin-left: 1rem;
+}
+.none{
+    display: none !important;
+}
