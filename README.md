@@ -23,4 +23,4 @@ Projects Live Previews:
 
 [Advice Generator](https://earslanyunus-advicegenerator.netlify.app)
 
-[Country Search](https://earslanyunus-countries.netlify.app) (Not yet finished)
+[Country Search](https://earslanyunus-countries.netlify.app)
