@@ -210,15 +210,23 @@ filter.addEventListener('change', evt => {
     x = []
 })
 
-const searchCountry = (ulke,filtername) =>{
-    console.log(ulke)
-    console.log(filtername)
-    const name = ulke.filtername
+const searchWithcca3 = (ulke) =>{
+    let country = []
+
     data.forEach(elm =>{
-        if (elm.indexOf(name)){
-            console.log(elm)
+        const countryName = elm.cca3
+        if (countryName.indexOf(ulke)>-1){
+            detailsContainer.classList.remove('none')
+            mainArea.classList.add('none')
+            country.push(elm)
+
+            updateDetailsUi(country[0])
+
         }
+
+
     })
+    country = []
 
 }
 
@@ -243,6 +251,7 @@ const updateDetailsUi = (ulke) =>{
         ulke.borders.forEach(elm => {
             let borderbtn = ` <button class="primaryBtn">${elm}</button>`
             detailBorders.insertAdjacentHTML('beforeend',borderbtn)
+
         })
 
     }else if(ulke.borders == undefined){
@@ -251,6 +260,8 @@ const updateDetailsUi = (ulke) =>{
 
 
 }
+
+
 const findCountry = (ulke) =>{
     let country = []
 
@@ -262,7 +273,6 @@ data.forEach(elm =>{
         country.push(elm)
 
         updateDetailsUi(country[0])
-        console.log(country)
 
     }
 
@@ -276,7 +286,6 @@ country_area.addEventListener('click', evt => {
    if (evt.target.closest('.box')){
        const selectedCountry =  evt.target.closest('.box').lastChild.firstElementChild.textContent
        findCountry(selectedCountry)
-       console.log(selectedCountry)
    }
 
 })
@@ -286,3 +295,10 @@ backButton.addEventListener('click', evt => {
 
 
 })
+detailBorders.addEventListener('click',evt => {
+    if (evt.target.classList.contains('primaryBtn')){
+        const selectedBorder =  evt.target.textContent
+        searchWithcca3(selectedBorder)
+    }
+})
+

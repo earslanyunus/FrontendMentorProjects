@@ -89,7 +89,7 @@ p{
 }
 .main-grid{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
     grid-template-rows: auto auto;
 }
 
@@ -179,6 +179,7 @@ p{
     box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.1);
     overflow: hidden;
     border-radius: 5px;
+    cursor: pointer;
 
 }
 .box-text-box{
@@ -219,6 +220,14 @@ p{
 .fw300{
     font-weight: 300;
 }
+#detailBorders button{
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+#backButton{
+    cursor: pointer;
+}
 .primaryBtn{
 
     background-color: var(--element);
@@ -230,6 +239,7 @@ p{
     transition: box-shadow .2s ease;
 
 }
+
 .primaryBtn:hover{
     box-shadow: 0px 0px 10px 2.5px rgba(0,0,0,.2);
 
