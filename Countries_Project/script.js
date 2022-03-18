@@ -1,4 +1,5 @@
 'use strict'
+//ACCES DOM CONTENT
 
 const loadbtn = document.querySelector('.load')
 const country_area = document.querySelector('.country-area')
@@ -23,28 +24,34 @@ const detailLanguages = document.querySelector('#detailLanguages')
 const detailBorders = document.querySelector('#detailBorders')
 
 
+//CHECK is the page load first time
+let IsPageFirstLoad = true
 
-let firstLoad = true
+//Country data storage
 let data
 
 
-toggle.addEventListener('click',evt =>{
+//Dark mode button event
+//CHECK is the page mode light
+toggle.addEventListener('click', evt => {
+    const isModeLight = document.querySelector('html').getAttribute('color-mode') == 'light'
 
-    if (document.querySelector('html').getAttribute('color-mode')=='light'){
-        document.querySelector('html').setAttribute('color-mode','dark')
-    }else{
-        document.querySelector('html').setAttribute('color-mode','light')
+
+    if (isModeLight) {
+        document.querySelector('html').setAttribute('color-mode', 'dark')
+    } else if (!isModeLight) {
+        document.querySelector('html').setAttribute('color-mode', 'light')
     }
 })
 
 
-//ulke verisini cek
+//GET country data
 const getCountry = async () => {
     const response = await fetch('https://restcountries.com/v3.1/all');
     data = await response.json();
 
 
-    //ilk 20 veriyi yukle
+    //loadbox
     if (response.ok) {
         loadbox()
 
@@ -54,17 +61,18 @@ const getCountry = async () => {
 }
 getCountry()
 
-//Verilen arguman ile box objesi olusturur arguman obj olan ulke verisidir
-const createBox = (ulke) => {
+//FUNCTION FOR CREATING BOX ELEMENT
+//get argument as country
+const createBox = (country) => {
 
-    const flag = ulke.flags.svg
-    const name = ulke.name.common;
-    const population = ulke.population;
-    const region = ulke.region
-    const capital = ulke.capital?.[0]
+    const flag = country.flags.svg
+    const name = country.name.common;
+    const population = country.population;
+    const region = country.region
+    const capital = country.capital?.[0]
 
 
-    const veri = ` <div class="box">
+    const countryElement = ` <div class="box">
                         <div class="img-container">
                             <img src="${flag}" class="flag-img" alt="">    
                         </div>
@@ -74,15 +82,19 @@ const createBox = (ulke) => {
                             <p class="fw600 region-text">Region: <span class="fw300 region">${region}</span></p>
                             <p class="fw600 capital-text">Capital: <span class="fw300 capital">${capital}</span></p>
                         </div>`
-    country_area.insertAdjacentHTML("beforeend", veri);
+    country_area.insertAdjacentHTML("beforeend", countryElement);
 
 
 }
-//ilk 20 ulkeyi en basta olusturmak icin fonksiyon
+
+
+//DEFINE current box count
 let currentNum = 0
+//DEFINE target box count
 let objectnum = 20
 
 const loadbox = () => {
+    //continue until you reach objectnum count
     for (currentNum; currentNum < objectnum; currentNum++) {
         createBox(data[currentNum])
 
@@ -92,37 +104,38 @@ const loadbox = () => {
 
 }
 
-//
 
+//DEFINE array for selected storage selected country objects
 let x = []
 search.addEventListener('keyup', evt => {
-    firstLoad = false
+    IsPageFirstLoad = false
     country_area.textContent = ''
     loadbtn.textContent = 'Load'
 
+    //input value to lower case
     const input = search.value.toLowerCase()
     data.forEach(elm => {
         const countryName = elm.name.common.toLowerCase();
         if (countryName.indexOf(input) > -1) {
 
 
-            //createBox(elm)
+            //selected countries push to array
             x.push(elm)
         }
     })
-
+    //selected countries display ui
     x.forEach(elm => {
         createBox(elm)
 
     })
-
+    //reset selected country
     x = []
     controlCard()
 
 })
 
 
-//Ekranda gozuken ulke sayisini kontrol ediliyor 20 den fazla ise geri kalan none ediliyor
+//if card element count over 20,display none after 20
 const controlCard = () => {
     if (country_area.childElementCount > 20) {
         for (let i = 20; i < country_area.childElementCount; i++) {
@@ -131,51 +144,61 @@ const controlCard = () => {
 
     }
 }
-//load butonu fonksiyonu
-let activecount = 0
+
+
+//define visible box count
+let visibleBoxCount = 0
 let loadfor = 0
+
+const defineVisibleBoxCount = () => {
+    for (const element of country_area.children) {
+
+        if (!(element.style.display == 'none')) {
+
+            visibleBoxCount++
+            if (visibleBoxCount > data.length) {
+                visibleBoxCount = data.length
+            }
+        }
+
+    }
+}
+
+const loadMoreBox = () => {
+    for (loadfor = visibleBoxCount; loadfor < visibleBoxCount + 20; loadfor++) {
+
+        if (!(visibleBoxCount == data.length)) {
+
+            country_area.children[loadfor].style.display = 'flex'
+
+
+        }
+
+    }
+}
 const loadMore = () => {
     try {
 
-        if (firstLoad == true){
+        if (IsPageFirstLoad == true) {
             loadbox()
         }
 
-        if (firstLoad == false){
-        if (country_area.childElementCount > 20) {
+        if (IsPageFirstLoad == false) {
+            if (country_area.childElementCount > 20) {
 
-            for (const element of country_area.children) {
-
-                if (!(element.style.display == 'none')) {
-
-                    activecount++
-                    if (activecount > data.length) {
-                        activecount = data.length
-                    }
-                }
-
-
+                defineVisibleBoxCount()
+                //chech box count == all country count if not equal load more 20
+                loadMoreBox()
             }
-
-
-            for (loadfor = activecount; loadfor < activecount + 20; loadfor++) {
-
-                if (!(activecount == data.length)) {
-
-                    country_area.children[loadfor].style.display = 'flex'
-
-
-                }
-
-            }
-        }}
+        }
 
     } catch (e) {
         console.error(e.message)
         loadbtn.textContent = 'Not Found Country'
 
     }
-    activecount = 0
+    //RESET visible box count
+    visibleBoxCount = 0
 }
 
 
@@ -184,38 +207,45 @@ loadbtn.addEventListener('click', () => {
 });
 
 filter.addEventListener('change', evt => {
+    //reset load btn text content
     loadbtn.textContent = 'Load'
-
-    firstLoad = false
+    //define page first load
+    IsPageFirstLoad = false
     country_area.textContent = ''
+    //define selected option value
     const selected = filter.options[filter.selectedIndex].text
-    if (!(selected == 'All')){
-    data.forEach(elm =>{
-        if (elm.region == selected){
-            x.push(elm)
-        }
-    })
-    x.forEach(elm => {
-        createBox(elm)
-    })}
-    else if (selected == 'All'){
-        data.forEach(elm =>{
+    if (!(selected == 'All')) {
+
+        data.forEach(elm => {
+            //selected option country add array
+            if (elm.region == selected) {
+                x.push(elm)
+            }
+        })
+        //selected country display ui
+        x.forEach(elm => {
+            createBox(elm)
+        })
+    } else if (selected == 'All') {
+        data.forEach(elm => {
             x.push(elm)
         })
         x.forEach(elm => {
             createBox(elm)
         })
     }
+    //control card count if over 20, after 20 display none
     controlCard()
+    //reset selected array
     x = []
 })
 
-const searchWithcca3 = (ulke) =>{
+const searchWithcca3 = (ulke) => {
     let country = []
 
-    data.forEach(elm =>{
+    data.forEach(elm => {
         const countryName = elm.cca3
-        if (countryName.indexOf(ulke)>-1){
+        if (countryName.indexOf(ulke) > -1) {
             detailsContainer.classList.remove('none')
             mainArea.classList.add('none')
             country.push(elm)
@@ -231,9 +261,9 @@ const searchWithcca3 = (ulke) =>{
 }
 
 
-const updateDetailsUi = (ulke) =>{
+const updateDetailsUi = (ulke) => {
     detailHeadText.textContent = ulke.name.common
-    detailImg.setAttribute('src',`${ulke.flags.svg}`)
+    detailImg.setAttribute('src', `${ulke.flags.svg}`)
     const nativeName = Object.entries(ulke.name.nativeName)
     detailNativeName.textContent = nativeName[0][1].official
     detailPopulation.textContent = ulke.population
@@ -245,16 +275,17 @@ const updateDetailsUi = (ulke) =>{
     detailCurrencies.textContent = currencies[0][0]
     const languages = Object.entries(ulke.languages)
     detailLanguages.textContent = languages[0][0]
-    if (!(ulke.borders == undefined)){
+    //if ulke borders is none
+    if (!(ulke.borders == undefined)) {
 
         detailBorders.textContent = ''
         ulke.borders.forEach(elm => {
             let borderbtn = ` <button class="primaryBtn">${elm}</button>`
-            detailBorders.insertAdjacentHTML('beforeend',borderbtn)
+            detailBorders.insertAdjacentHTML('beforeend', borderbtn)
 
         })
 
-    }else if(ulke.borders == undefined){
+    } else if (ulke.borders == undefined) {
         detailBorders.textContent = 'No Borders'
     }
 
@@ -262,31 +293,35 @@ const updateDetailsUi = (ulke) =>{
 }
 
 
-const findCountry = (ulke) =>{
+const findCountry = (ulke) => {
     let country = []
 
-data.forEach(elm =>{
-    const countryName = elm.name.common
-    if (countryName.indexOf(ulke)>-1){
-        detailsContainer.classList.remove('none')
-        mainArea.classList.add('none')
-        country.push(elm)
+    //all country for loop
+    data.forEach(elm => {
+        const countryName = elm.name.common
+        //input value equal country name display ui
+        if (countryName.indexOf(ulke) > -1) {
+            detailsContainer.classList.remove('none')
+            mainArea.classList.add('none')
+            country.push(elm)
 
-        updateDetailsUi(country[0])
+            updateDetailsUi(country[0])
 
-    }
+        }
 
 
-})
+    })
     country = []
 
 }
 
+//box selected event
 country_area.addEventListener('click', evt => {
-   if (evt.target.closest('.box')){
-       const selectedCountry =  evt.target.closest('.box').lastChild.firstElementChild.textContent
-       findCountry(selectedCountry)
-   }
+    const isThereaBox = evt.target.closest('.box')
+    if (isThereaBox) {
+        const selectedCountry = evt.target.closest('.box').lastChild.firstElementChild.textContent
+        findCountry(selectedCountry)
+    }
 
 })
 backButton.addEventListener('click', evt => {
@@ -295,9 +330,10 @@ backButton.addEventListener('click', evt => {
 
 
 })
-detailBorders.addEventListener('click',evt => {
-    if (evt.target.classList.contains('primaryBtn')){
-        const selectedBorder =  evt.target.textContent
+
+detailBorders.addEventListener('click', evt => {
+    if (evt.target.classList.contains('primaryBtn')) {
+        const selectedBorder = evt.target.textContent
         searchWithcca3(selectedBorder)
     }
 })
